@@ -1,6 +1,16 @@
+server:
+  port: 8082
 spring:
   application:
     name: discovery-service
   profiles:
     active: develop
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl: http://localhost:8082/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+
 message: Hola prueba config
