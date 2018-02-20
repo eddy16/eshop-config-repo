@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: catalog-service
+  profiles:
+    active: develop
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: catalog
+server:
+  port: 8080
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8082/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+ribbon:
+    eureka:
+        enabled: true
