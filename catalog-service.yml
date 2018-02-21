@@ -5,9 +5,9 @@ spring:
     active: develop
   data:
     mongodb:
-      host: localhost
+      host: 192.168.179.130
       port: 27017
-      database: catalog
+      database: test
 server:
   port: 8080
 eureka:
