@@ -1,0 +1,23 @@
+server:
+  port: 8765
+zuul:
+  prefix: /api
+  routes:
+    config:
+      path: /config/**
+      serviceId: config-server
+    catalog:
+      path: /catalog/**
+      serviceId: catalog-service
+eureka:
+  client:
+    region: default
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8082/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+spring:
+  application:
+    name: edge-service
