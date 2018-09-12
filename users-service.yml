@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: users-service
+  profiles:
+    active: develop
+  data:
+    mongodb:
+      host: mongo
+      port: 27017
+      database: test
+server:
+  port: 8080
+ribbon:
+    eureka:
+        enabled: true
+        
+logging:
+  file: logs/users-service.log
+  pattern:
+    console: "%highlight(%-5level) %green([%date{dd MMMM yyyy:HH:mm:ss.SSS}]) [%thread] %cyan(%lo{10}) -> %blue(%msg) %n"
+    file: "%-5level [%date{dd MMM yyyy:HH:mm:ss.SSS}] - [%thread] %lo{10} - %msg %n %ex{full}"
+  level:
+    org.springframework.web: INFO
+    org.springframework.test: INFO
+    org.springframework.data: INFO
+    org.springframework.cloud: INFO
+    org.hibernate: INFO
